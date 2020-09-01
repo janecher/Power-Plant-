@@ -29,15 +29,26 @@
     }
   }
   
-  const canEat = function(plant) {
-    const obj = {
-      eat: function(food) {
-        return `The ${plant.name} eats the ${food}.` // Small update
-      }
-    }
-    return obj;
+  const canEat = (eatProp) => {
+    // const obj = {
+    //   eat: function(food) {
+    //     return `The ${plant.name} eats the ${food}.` // Small update
+    //   }
+    // }
+    // return obj;
+    // return (value) => {
+    // return (state) => ({
+    //   ...state,
+    //   [eatProp] : true
+    // }) 
+    return (value) => {
+      return (state) => ({
+        ...state,
+        [eatProp] : value
+      })
+    }   
   }
-  
+
   // We create four functions using our function factory. We could easily create many more.
   const changeName = changeNameState("name");
   const feed = changeState("soil")(1);
@@ -57,6 +68,8 @@
   const water = changeState("water")(0);
   const light = changeState("light")(0);
 
+  const eating = changeState("eat")("insects");
+
   const newPlant = (name) => {
     let plant = {
       name
@@ -68,7 +81,7 @@
   const plantTest = newPlant("flower");
   console.log(plantTest);
 
-  export {feed, hydrate, illuminate, overHydrate, superWater, scorch, highheat, changeName, newPlant, stateControl, blueFood, redFood, greenFood }
+  export {feed, hydrate, illuminate, overHydrate, superWater, scorch, highheat, changeName, newPlant, stateControl, blueFood, redFood, greenFood, eating }
 
   // $(document).ready(function() {
 

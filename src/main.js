@@ -1,4 +1,4 @@
-import {feed, hydrate, illuminate, overHydrate, superWater, scorch, highheat, stateControl, blueFood, greenFood, redFood, changeName, newPlant} from './plant.js';
+import {feed, hydrate, illuminate, overHydrate, superWater, scorch, highheat, stateControl, blueFood, greenFood, redFood, changeName, newPlant, eating} from './plant.js';
 import $ from 'jquery';
 
   $(document).ready(function() {
@@ -65,9 +65,9 @@ import $ from 'jquery';
       $('#name-value').text(`${currentState.name}`);
     });
 
-    $('#showName').click(function() {
-      const currentState = stateControl();
-      $('#name-value').text(`${currentState.name}`);
+    $('#canEat').click(function() {
+      const newState = stateControl(eating);
+      $('.plant-info').append(`${newState}`);
     });
 
 
