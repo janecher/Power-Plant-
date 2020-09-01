@@ -1,5 +1,5 @@
-export 
-  
+
+//export class plant {  
   const storeState = () => {
     let currentState = {};
     return (stateChangeFunction = state => state) => {
@@ -11,7 +11,7 @@ export
 
   const stateControl = storeState();
 
-  const changeState = (prop) => {
+  export const changeState = (prop) => {
     return (value) => {
       return (state) => ({
         ...state,
@@ -31,6 +31,12 @@ export
   const overHydrate = changeState("water")(-2);
   const superWater = changeState("water")(5);
 
+  const illuminate = changeState("light")(1);
+  const scorch = changeState("light")(-2);
+  const highheat = changeState("light")(3);
+
+  export {feed, hydrate, illuminate, overHydrate, superWater, scorch, highheat}
+
   $(document).ready(function() {
 
   // This function has side effects because we are using jQuery. Manipulating the DOM will always be a side effect. Note that we only use one of our functions to alter soil. You can easily add more.
@@ -38,6 +44,11 @@ export
     $('#feed').click(function() {
       const newState = stateControl(blueFood);
       $('#soil-value').text(`Soil: ${newState.soil}`);
+    });
+
+    $('#feed').click(function() {
+      const newState = stateControl(redFood);
+      $('#soil-value').text('Soil: ${newState.soil}');
     });
 
   // This function doesn't actually do anything useful in this application - it just demonstrates how we can "look" at the current state (which the DOM is holding anyway). However, students often do need the ability to see the current state without changing it so it's included here for reference.
@@ -48,3 +59,4 @@ export
       $('#soil-value').text(`Soil: ${currentState.soil}`);
     });
   });
+}
