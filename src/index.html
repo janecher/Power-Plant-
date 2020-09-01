@@ -4,17 +4,37 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+    <script src="src/styles.css"></script>
     <script type="text/javascript" src="plant.js"></script>
     <title>Grow Your Plant</title>
   </head>
   <body>
+    <h1>Little shop of Horids</h1>
     <div class="container">
       <div class="grow-buttons">
-        <button class="btn-success" id="feed">Add soil</button>
-        <button class="btn-success" id="show-state">Current Stats</button>
-      </div>
-      <h1>Your Plant's Values</h1>
-      <h3><div id="soil-value">0</div></h3>
+        <button class="btn-success" id="feed">Add soil</button><br>
+        <button class="btn-success" id="show-state">Current Stats</button><br>
+        <button class="btn-success" id="greenFoods">Add Green growth</button><br>
+        <button class="btn-success" id="redFoods">Add Red growth</button><br>
+        <button class="btn-success" id="blueFoods">Add Blue growth</button><br>
+        <button class="btn-success" id="illuminates">Give it some light</button><br>
+        <button class="btn-success" id="scorcheds">Leave it outside</button><br>
+        <button class="btn-success" id="highHeats">Put it under a lamp</button><br>
+        <button class="btn-success" id="hydrates">give it water</button><br>
+        <button class="btn-success" id="overHydrates">Dump a Bucket of water on it</button><br>
+        <button class="btn-success" id="superWaters">Give it a special formula</button><br>
+      </div class="container">
+      <h3>Your Plant's Values</h3>
+      <h4>Name:<div id="name-value"></div></h4>
+      <h4>Soil:<div id="soil-value"></div></h4>
+      <h4>Water:<div id="water-value"></div></h4>
+      <h4>Light:<div id="light-value"></div></h4>
     </div>
+    <form>
+      <label>Name:</label>
+      <input id="name" type="text">
+      <button class="btn-success" id="newPlant">Create a new Plant</button><br>
+    </form>
+    <div id="newPlantCreated"></div>
   </body>
 </html>
