@@ -1,5 +1,7 @@
 <html>
   <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -9,11 +11,10 @@
     <title>Grow Your Plant</title>
   </head>
   <body>
-    <h1>Little shop of Horids</h1>
+    <h1 class="Jumbotron">Little shop of Horids</h1>
     <div class="container">
       <div class="grow-buttons">
         <button class="btn-success" id="feed">Add soil</button><br>
-        <button class="btn-success" id="show-state">Current Stats</button><br>
         <button class="btn-success" id="greenFoods">Add Green growth</button><br>
         <button class="btn-success" id="redFoods">Add Red growth</button><br>
         <button class="btn-success" id="blueFoods">Add Blue growth</button><br>
@@ -23,12 +24,14 @@
         <button class="btn-success" id="hydrates">give it water</button><br>
         <button class="btn-success" id="overHydrates">Dump a Bucket of water on it</button><br>
         <button class="btn-success" id="superWaters">Give it a special formula</button><br>
+        <button class="btn-success" id="showName">Show name</button><br>
       </div class="container">
       <h3>Your Plant's Values</h3>
       <h4>Name:<div id="name-value"></div></h4>
       <h4>Soil:<div id="soil-value"></div></h4>
       <h4>Water:<div id="water-value"></div></h4>
       <h4>Light:<div id="light-value"></div></h4>
+      <button class="btn-success" id="canEat">Add eating ability</button><br>
     </div>
     <form>
       <label>Name:</label>

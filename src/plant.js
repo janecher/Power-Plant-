@@ -29,6 +29,15 @@
     }
   }
   
+  const canEat = function(plant) {
+    const obj = {
+      eat: function(food) {
+        return `The ${plant.name} eats the ${food}.` // Small update
+      }
+    }
+    return obj;
+  }
+  
   // We create four functions using our function factory. We could easily create many more.
   const changeName = changeNameState("name");
   const feed = changeState("soil")(1);
